@@ -3,14 +3,6 @@ name: CI
 on:
   push:
     branches: [ master ]
-cd ~/devops/projects
-
-cat > .github/workflows/ci.yml <<'EOF'
-name: CI
-
-on:
-  push:
-    branches: [ master ]
   pull_request:
     branches: [ master ]
 
@@ -26,34 +18,3 @@ jobs:
 
       - name: Run hello.sh
         run: bash hello.sh
-EOF  pull_request:
-    branches: [ master ]
-
-jobs:
-  test:
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Check hello.sh
-        run: test -f hello.sh
-
-      - name: Run hello.sh
-        run: bash hello.shname: CI
-
-on:
-  push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
-
-jobs:
-  test:
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Run test
-        run: echo "CI is working"
