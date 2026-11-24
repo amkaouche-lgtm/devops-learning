@@ -32,4 +32,14 @@ jobs:
 
       - name: Push Docker image
         run: docker push ghcr.io/amkaouche-lgtm/devops-app:latest
+  deploy:
+    needs: test
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Pull Docker image
+        run: docker pull ghcr.io/amkaouche-lgtm/devops-app:latest
+
+      - name: Run Docker container
+        run: docker run -d --name devops-app ghcr.io/amkaouche-lgtm/devops-app:latest
 
