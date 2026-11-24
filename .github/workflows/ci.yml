@@ -21,3 +21,6 @@ jobs:
 
       - name: Run test
         run: bash test.sh
+
+      - name: Build Docker image
+        run: docker build -t my-devops-app .
