@@ -40,9 +40,6 @@ jobs:
       - name: Pull Docker image
         run: docker pull ghcr.io/amkaouche-lgtm/devops-app:latest
 
-      - name: Run Nginx container
-        run: |
-          docker run -d --name devops-app -p 8080:80 nginx:latest
-          sleep 3
-          curl -f http://localhost:8080
+      - name: Run Docker container
+  run: docker run -d --name devops-app ghcr.io/amkaouche-lgtm/devops-app:latest
 
