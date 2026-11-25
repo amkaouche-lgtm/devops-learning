@@ -41,5 +41,5 @@ jobs:
         run: docker pull ghcr.io/amkaouche-lgtm/devops-app:latest
 
       - name: Run Docker container
-  run: docker run -d --name devops-app ghcr.io/amkaouche-lgtm/devops-app:latest
+        run: docker run -d --name devops-app ghcr.io/amkaouche-lgtm/devops-app:latest
 
